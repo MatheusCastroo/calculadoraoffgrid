@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora off grid</title>
+</head>
+<body>
+    <header>
+        <h1>PierSystem Solar</h1>
+    </header>
+    <main>
+        <div class="inf_equip">
+            <div class="equipamento">
+                <p>Descrição do Equipamento</p>
+                <input type="text" name="equipamento" id="equipamento" placeholder="Ex: Lâmpada" required>
+            </div>
+            <div class="potencia">
+                <p>Potência(W)</p>
+                <input type="number" name="potencia" id="potencia" min="1" required>
+            </div>
+            <div class="quantidade_equip">
+                <p>Quantidade</p>
+                <input type="number" name="quantidade_equip" id="quantidade_equip" min="1" required>
+            </div>
+            <div class="hdia">
+                <p>Horas de uso diário</p>
+                <input type="number" name="hdia" id="hdia" min="0.1" required>
+            </div>
+            <button onclick="multiplicarCampos()" id="verificar">Verificar</button>
+            <div class="resultado">
+                <label for="">Consumo<br>
+                    diário total:<br>
+                    <span id="res">0 Wh/dia</span>
+                </label>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
