@@ -1,17 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
 }
 
 body {
     background-color: white;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding-left: 20px;
 }
 
 header {
@@ -19,11 +14,11 @@ header {
     color: white;
     text-align: center;
     padding: 50px;
-    width: 100%; /* Ocupar toda a largura da tela */
+    width: 100%; 
 }
 
 h1 {
-    margin: 0; /* Removemos a margem padrão do h1 */
+    margin: 0; 
 }
 
 p {
@@ -45,8 +40,8 @@ input {
     text-align: center;
     margin-top: 15px;
     font-size: 24px;
-    padding: 15px 20px;
-    width: 100%;
+    padding: 20px 20px;
+    width: 12%;
     background-image: linear-gradient(135deg, #5F01DB, #0075EB);
     color: white;
     border: 2px solid #0075EB;
