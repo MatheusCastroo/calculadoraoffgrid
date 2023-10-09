@@ -11,53 +11,120 @@
         <h1>PierSystem Solar</h1>
     </header>
     <main>
-        <div class="container">
-            <div class="equipamento">
-                <p>Descrição do Equipamento</p>
-                <input type="text" name="equipamento" id="equipamento" placeholder="Ex: Lâmpada" required>
+        <div class="container-wrapper">
+            <div class="container">
+                    <div class="equipamento">
+                        <label for="equipamento">Descrição do Equipamento</label>
+                        <input type="text" name="equipamento" id="equipamento" placeholder="Ex: Lâmpada" required>
+                    </div>
+                    <div class="potencia">
+                        <label for="potencia">Potência (W)</label>
+                        <input type="number" name="potencia" id="potencia" min="1" required>
+                    </div>
+                    <div class="quantidade_equip">
+                        <label for="quantidade_equip">Quantidade</label>
+                        <input type="number" name="quantidade_equip" id="quantidade_equip" min="1" required>
+                    </div>
+                    <div class="hdia">
+                        <label for="hdia">Horas de uso diário</label>
+                        <input type="number" name="hdia" id="hdia" min="0.1" required>
+                    </div>
+                    <button onclick="multiplicarCampos()" id="verificar">Verificar</button>
+                    <div class="resultado">
+                        <label for="res">Consumo Diário do Equipamento</label>
+                        <span id="res">0 Wh/dia</span>
+                    </div>
             </div>
-            <div class="potencia">
-                <p>Potência(W)</p>
-                <input type="number" name="potencia" id="potencia" min="1" required>
-            </div>
-            <div class="quantidade_equip">
-                <p>Quantidade</p>
-                <input type="number" name="quantidade_equip" id="quantidade_equip" min="1" required>
-            </div>
-            <div class="hdia">
-                <p>Horas de uso diário</p>
-                <input type="number" name="hdia" id="hdia" min="0.1" required>
-            </div>
-            <button onclick="multiplicarCampos()" id="verificar">Verificar</button>
-            <div class="resultado">
-                <label for="">Consumo<br>
-                    diário total:<br>
-                    <span id="res">0 Wh/dia</span>
-                </label>
+            <div class="container2">
+                <div class="inversor">
+                    <h2>Inversor</h2>
+                    <div class="motor">
+                        <label for="motor">Possui equipamento com motor de indução?</label>
+                        <select name="motor" id="motor">
+                            <option value="motor-sim">Sim</option>
+                            <option value="motor-nao">Não</option>
+                        </select>
+                    </div>
+                    <div class="tensao">
+                        <label for="tensao">Qual é a tensão Vca dos equipamentos?</label>
+                        <select name="tensao" id="tensao">
+                            <option value="tensao-127">127Vca</option>
+                            <option value="tensao-220">220Vca</option>
+                        </select>
+                    </div>
+                    <div class="tipo_inversor">
+                        <label for="inversor">Tipo de inversor?</label>
+                        <select name="inversor" id="inversor">
+                            <option value="inversor-mod">Onda Modificada</option>
+                            <option value="inversor-sen">Onda Senoidal Pura</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bateria">
+                    <h2>Bateria Estacionária</h2>
+                    <div class="capacidade_bateria">
+                        <label for="cp_bateria">Capacidade em ampères-hora (Ah)?</label>
+                        <select name="cp_bateria" id="cp_bateria">
+                            <option value="cap60ah">60 Ah</option>
+                            <option value="c105ah">105 Ah</option>
+                            <option value="c150ah">150 Ah</option>
+                            <option value="c220ah">220 Ah</option>
+                        </select>
+                    </div>
+                    <div class="porcentagem_bateria">
+                        <label for="porcentagem_bateria">Descarregar baterias até (%)</label>
+                        <select name="porcentagem_bateria" id="porcentagem_bateria">
+                            <option value="bat-por5">5%</option>
+                            <option value="bat-por10">10%</option>
+                            <option value="bat-por15">15%</option>
+                            <option value="bat-por20">20%</option>
+                            <option value="bat-por25">25%</option>
+                            <option value="bat-por30">30%</option>
+                            <option value="bat-por35">35%</option>
+                            <option value="bat-por40">40%</option>
+                            <option value="bat-por45">45%</option>
+                            <option value="bat-por50">50%</option>
+                            <option value="bat-por55">55%</option>
+                            <option value="bat-por60">60%</option>
+                            <option value="bat-por65">65%</option>
+                            <option value="bat-por70">70%</option>
+                            <option value="bat-por75">75%</option>
+                            <option value="bat-por80">80%</option>
+                        </select>
+                    </div>
+                    <div class="autonomia">
+                        <label for="bat-auto">Autonomia em dias?</label>
+                        <input type="number" name="bat-auto" id="bat-auto">
+                    </div>
+                    <div class="voltagem">
+                        <label for="voltagem">Tensão do banco de baterias?</label>
+                        <select name="voltagem" id="voltagem">
+                            <option value="volt-12">12V</option>
+                            <option value="volt-24">24V</option>
+                            <option value="volt-48">48V</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="local">
+                    <h2>Local de Instalação</h2>
+                    <div class="estado">
+                        <label for="estado">Estado</label>
+                        <select name="estado" id="estado">
+                            <option value="estado1">Estado 1</option>
+                            <option value="estado2">Estado 2</option>
+                        </select>
+                    </div>
+                    <div class="cidade">
+                        <label for="cidade">Cidade</label>
+                        <select name="cidade" id="cidade">
+                            <option value="cidade1">Cidade 1</option>
+                            <option value="cidade2">Cidade 2</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
