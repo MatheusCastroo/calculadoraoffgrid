@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Calculadora off grid</title>
 </head>
+
 <body>
     <header>
-        <h1>PierSystem Solar</h1>
+        <h1>Teste Solar</h1>
     </header>
     <main>
         <div class="container-wrapper">
             <div class="container">
-                    <div class="equipamento">
-                        <label for="equipamento">Descrição do Equipamento</label>
-                        <input type="text" name="equipamento" id="equipamento" placeholder="Ex: Lâmpada" required>
-                    </div>
-                    <div class="potencia">
-                        <label for="potencia">Potência (W)</label>
-                        <input type="number" name="potencia" id="potencia" min="1" required>
-                    </div>
-                    <div class="quantidade_equip">
-                        <label for="quantidade_equip">Quantidade</label>
-                        <input type="number" name="quantidade_equip" id="quantidade_equip" min="1" required>
-                    </div>
-                    <div class="hdia">
-                        <label for="hdia">Horas de uso diário</label>
-                        <input type="number" name="hdia" id="hdia" min="0.1" required>
-                    </div>
-                    <button onclick="multiplicarCampos()" id="verificar">Verificar</button>
-                    <div class="resultado">
-                        <label for="res">Consumo Diário do Equipamento</label>
-                        <span id="res">0 Wh/dia</span>
-                    </div>
+                <div class="equipamento">
+                    <label for="equipamento">Descrição do Equipamento</label>
+                    <input type="text" name="equipamento" id="equipamento" placeholder="Ex: Lâmpada" required>
+                </div>
+                <div class="potencia">
+                    <label for="potencia">Potência (W)</label>
+                    <input type="number" name="potencia" id="potencia" min="1" required>
+                </div>
+                <div class="quantidade_equip">
+                    <label for="quantidade_equip">Quantidade</label>
+                    <input type="number" name="quantidade_equip" id="quantidade_equip" min="1" required>
+                </div>
+                <div class="hdia">
+                    <label for="hdia">Horas de uso diário</label>
+                    <input type="number" name="hdia" id="hdia" min="0.1" required>
+                </div>
+                <button onclick="multiplicarCampos()" id="verificar">Verificar</button>
+                <div class="resultado">
+                    <label for="res">Consumo Diário do(s) Equipamento(s)</label>
+                    <span id="res">0 Wh/dia</span>
+                </div>
+                <div class="lista_equip">
+                    <h2>Lista de Equipamentos</h2>
+                    <p>TESTE</p>
+                    <p>TESTE</p>
+                    <p>TESTE</p>
+                    <p>TESTE</p>
+                </div>
             </div>
             <div class="container2">
                 <div class="inversor">
@@ -127,4 +136,5 @@
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
