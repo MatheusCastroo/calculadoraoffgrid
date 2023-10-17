@@ -28,7 +28,7 @@
                     <input type="number" name="quantidade_equip" id="quantidade_equip" min="1" required>
                 </div>
                 <div class="hdia">
-                    <label for="hdia">Horas de uso diário</label>
+                    <label for "hdia">Horas de uso diário</label>
                     <input type="number" name="hdia" id="hdia" min="0.1" required>
                 </div>
                 <button onclick="multiplicarCampos()" id="verificar">Verificar</button>
@@ -46,6 +46,7 @@
                     <div class="motor">
                         <label for="motor">Possui equipamento com motor de indução?</label>
                         <select name="motor" id="motor">
+                            <option disabled selected value="null">Selecione uma opção</option>
                             <option value="motor-sim">Sim</option>
                             <option value="motor-nao">Não</option>
                         </select>
@@ -53,6 +54,7 @@
                     <div class="tensao">
                         <label for="tensao">Qual é a tensão Vca dos equipamentos?</label>
                         <select name="tensao" id="tensao">
+                            <option disabled selected value="null">Selecione uma opção</option>
                             <option value="tensao-127">127Vca</option>
                             <option value="tensao-220">220Vca</option>
                         </select>
@@ -60,6 +62,7 @@
                     <div class="tipo_inversor">
                         <label for="inversor">Tipo de inversor?</label>
                         <select name="inversor" id="inversor">
+                            <option disabled selected value="null">Selecione uma opção</option>
                             <option value="inversor-mod">Onda Modificada</option>
                             <option value="inversor-sen">Onda Senoidal Pura</option>
                         </select>
@@ -70,6 +73,7 @@
                     <div class="capacidade_bateria">
                         <label for="cp_bateria">Capacidade em ampères-hora (Ah)?</label>
                         <select name="cp_bateria" id="cp_bateria">
+                            <option disabled selected value="null">Selecione uma opção</option>
                             <option value="cap60ah">60 Ah</option>
                             <option value="c105ah">105 Ah</option>
                             <option value="c150ah">150 Ah</option>
@@ -79,22 +83,10 @@
                     <div class="porcentagem_bateria">
                         <label for="porcentagem_bateria">Descarregar baterias até (%)</label>
                         <select name="porcentagem_bateria" id="porcentagem_bateria">
+                            <option disabled selected value="null">Selecione uma opção</option>
                             <option value="bat-por5">5%</option>
                             <option value="bat-por10">10%</option>
-                            <option value="bat-por15">15%</option>
-                            <option value="bat-por20">20%</option>
-                            <option value="bat-por25">25%</option>
-                            <option value="bat-por30">30%</option>
-                            <option value="bat-por35">35%</option>
-                            <option value="bat-por40">40%</option>
-                            <option value="bat-por45">45%</option>
-                            <option value="bat-por50">50%</option>
-                            <option value="bat-por55">55%</option>
-                            <option value="bat-por60">60%</option>
-                            <option value="bat-por65">65%</option>
-                            <option value="bat-por70">70%</option>
-                            <option value="bat-por75">75%</option>
-                            <option value="bat-por80">80%</option>
+                            <!-- Adicione outras opções aqui -->
                         </select>
                     </div>
                     <div class="autonomia">
@@ -104,6 +96,7 @@
                     <div class="voltagem">
                         <label for="voltagem">Tensão do banco de baterias?</label>
                         <select name="voltagem" id="voltagem">
+                            <option disabled selected value="null">Selecione uma opção</option>
                             <option value="volt-12">12V</option>
                             <option value="volt-24">24V</option>
                             <option value="volt-48">48V</option>
@@ -114,7 +107,8 @@
                     <h2>Local de Instalação</h2>
                     <div class="regiao">
                         <label for="regiao">Região</label>
-                        <select name="regiao" id="regiao">
+                        <select name="regiao" id="regiao" onchange="carregarEstados()">
+                            <option disabled selected value="null">Selecione uma opção</option>
                             <option value="norte">Norte</option>
                             <option value="nordeste">Nordeste</option>
                             <option value="oeste">Centro-Oeste</option>
@@ -125,38 +119,8 @@
                     <div class="estado">
                         <label for="estado">Estados</label>
                         <select name="estado" id="estado">
-                            <!--Norte-->
-                            <option value="acre">Acre</option>
-                            <option value="amapa">Amapá</option>
-                            <option value="amazonas">Amazonas</option>
-                            <option value="para">Pará</option>
-                            <option value="rondonia">Rondônia</option>
-                            <option value="roraima">Roraima</option>
-                            <option value="tocantins">Tocantins</option>
-                            <!--Nordeste-->
-                            <option value="alagoas">Alagoas</option>
-                            <option value="bahia">Bahia</option>
-                            <option value="ceara">Ceará</option>
-                            <option value="maranhao">Maranhão</option>
-                            <option value="paraiba">Paraíba</option>
-                            <option value="pernambuco">Pernambuco</option>
-                            <option value="piaui">Piauí</option>
-                            <option value="rio_grande_do_norte">Rio Grande do Norte</option>
-                            <option value="sergipe">Sergipe</option>
-                            <!--Centro-Oeste-->
-                            <option value="distrito_federal">Distrito Federal</option>
-                            <option value="goias">Goiás</option>
-                            <option value="mato_grosso">Mato Grosso</option>
-                            <option value="mato_grosso_do_sul">Mato Grosso do Sul</option>
-                            <!--Sudeste-->
-                            <option value="espirito_santo">Espírito Santo</option>
-                            <option value="minas_gerais">Minas Gerais</option>
-                            <option value="rio_de_janeiro">Rio de Janeiro</option>
-                            <option value="sao_paulo">São Paulo</option>
-                            <!--Sul-->
-                            <option value="parana">Paraná</option>
-                            <option value="rio_grande_do_sul">Rio Grande do Sul</option>
-                            <option value="santa_catarina">Santa Catarina</option>
+                            <option disabled selected value="null">Selecione uma opção</option>
+                            <!-- Opções de estados serão carregadas dinamicamente aqui -->
                         </select>
                     </div>
                 </div>
