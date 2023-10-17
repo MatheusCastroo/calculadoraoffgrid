@@ -78,3 +78,48 @@ function atualizarSomaTotal() {
     let res = document.getElementById('res');
     res.innerHTML = somaTotal + ' Wh/dia';
 }
+
+// Crie um objeto com as opções de estados para cada região
+// Crie um objeto com as opções de estados para cada região
+const estadosPorRegiao = {
+    norte: ["Acre", "Amapá", "Amazonas", "Pará", "Rondônia", "Roraima", "Tocantins"],
+    nordeste: ["Alagoas", "Bahia", "Ceará", "Maranhão", "Paraíba", "Pernambuco", "Piauí", "Rio Grande do Norte", "Sergipe"],
+    oeste: ["Distrito Federal", "Goiás", "Mato Grosso", "Mato Grosso do Sul"],
+    sudeste: ["Espírito Santo", "Minas Gerais", "Rio de Janeiro", "São Paulo"],
+    sul: ["Paraná", "Rio Grande do Sul", "Santa Catarina"]
+};
+
+// Função para carregar os estados com base na região selecionada
+function carregarEstados() {
+    const regiaoSelect = document.getElementById('regiao');
+    const estadoSelect = document.getElementById('estado');
+
+    // Limpa as opções atuais do elemento select dos estados
+    estadoSelect.innerHTML = '';
+
+    // Obtém a região selecionada
+    const regiaoSelecionada = regiaoSelect.value;
+
+    // Verifica se a região selecionada está no objeto de estados
+    if (regiaoSelecionada in estadosPorRegiao) {
+        // Adicione uma opção em branco como opção inicial
+        const optionEmBranco = document.createElement('option');
+        optionEmBranco.value = '';
+        optionEmBranco.textContent = '';
+        estadoSelect.appendChild(optionEmBranco);
+
+        // Adiciona as opções de estados para a região selecionada
+        estadosPorRegiao[regiaoSelecionada].forEach((estado) => {
+            const option = document.createElement('option');
+            option.value = estado.toLowerCase().replace(/\s/g, '_');
+            option.textContent = estado;
+            estadoSelect.appendChild(option);
+        });
+    }
+}
+
+// Adicione um ouvinte de eventos para o elemento select da região
+document.getElementById('regiao').addEventListener('change', carregarEstados);
+
+// Inicialize a lista de estados com uma opção em branco
+carregarEstados();
