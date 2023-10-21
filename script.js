@@ -123,3 +123,19 @@ document.getElementById('regiao').addEventListener('change', carregarEstados);
 
 // Inicialize a lista de estados com uma opção em branco
 carregarEstados();
+
+function montagemSolar() {
+
+    let selectPlaca = document.getElementById('placa');
+    let selectBateria = document.getElementById('modelo_bateria');
+    let selectEstrutura = document.getElementById('estrutura');
+    let res = document.getElementById('res'); // Obtenha o elemento onde você deseja exibir o resultado
+
+    // Obtenha o texto das opções selecionadas
+    let placa = selectPlaca.options[selectPlaca.selectedIndex].text;
+    let modeloBateria = selectBateria.options[selectBateria.selectedIndex].text;
+    let estrutura = selectEstrutura.options[selectEstrutura.selectedIndex].text;
+
+    // Exiba o texto das opções em um elemento
+    alert("Placa:" + placa + "\nBateria: " + modeloBateria + "\nEstrutura: " + estrutura);
+}
