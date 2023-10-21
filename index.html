@@ -1,135 +1,148 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
 
-body {
-    background-color: #f5f5f5;
-    height: 100vh;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-    background-color:#e5eaf1 ;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora off grid</title>
+</head>
 
-header {
-    background-image: linear-gradient(135deg, #F1F1F1, #0D6EFD);
-    color: white;
-    text-align: center;
-    padding: 1em;
-}
+<body>
+    <header>
+        <h1>Teste Solar</h1>
+    </header>
+    <main>
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="equipamento">
+                    <label for="equipamento">Descrição do Equipamento</label>
+                    <input type="text" name="equipamento" id="equipamento" placeholder="Ex: Lâmpada" required>
+                </div>
+                <div class="potencia">
+                    <label for="potencia">Potência dos equipamentos em Watt (W)</label>
+                    <input type="number" name="potencia" id="potencia" min="1" required>
+                </div>
+                <div class="quantidade_equip">
+                    <label for="quantidade_equip">Quantidade</label>
+                    <input type="number" name="quantidade_equip" id="quantidade_equip" min="1" required>
+                </div>
+                <div class="hdia">
+                    <label for="hdia">Horas de uso diário</label>
+                    <input type="number" name="hdia" id="hdia" min="0.1" required>
+                </div>
+                <button onclick="multiplicarCampos()" id="verificar">Verificar</button>
+                <div class="resultado">
+                    <label for="res">Consumo Diário do(s) Equipamento(s)</label>
+                    <span id="res">0 Wh/dia</span>
+                </div>
+                <div class="lista_equip">
+                    <h2>Lista de Equipamentos</h2>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="inversor">
+                    <h2>Placa</h2>
+                    <div class="placa">
+                        <label for="placa">Modelo da placa</label>
+                        <select name="placa" id="placa">
+                            <option disabled selected value="null">Selecione uma opção</option>
+                            <option value="modulo-intelbras">MODULO FOTOVOLTAICO INTELBRAS 160W</option>
+                            <option value="painel-canadian440">PAINEL FOTOVOLTAICO MONOCRISTALINO CANADIAN 440W</option>
+                            <option value="painel-sunova">PAINEL FOTOVOLTAICO MONOCRISTALINO SUNOVA 450W</option>
+                            <option value="painel-sine">PAINEL FOTOVOLTAICO MONOCRISTALINO SINE ENERGY 500W</option>
+                            <option value="painel-canadian550">PAINEL FOTOVOLTAICO MONOCRISTALINO CANADIAN 550W</option>
+                            <option value="painel-ja">PAINEL FOTOVOLTAICO MONOCRISTALINO JA SOLAR 550W</option>
+                            <option value="painel-sine">PAINEL FOTOVOLTAICO MONOCRISTALINO SINE ENERGY 555W</option>
+                            <option value="painel-znshine555">PAINEL FOTOVOLTAICO MONOCRISTALINO ZNSHINE 555W</option>
+                            <option value="painel-znshine575">PAINEL FOTOVOLTAICO MONOCRISTALINO ZNSHINE 575W</option>
+                        </select>
+                    </div>
+                    <div class="tensao">
+                        <label for="tensao">Tensão de operação do sistema</label>
+                        <select name="tensao" id="tensao">
+                            <option disabled selected value="null">Selecione uma opção</option>
+                            <option value="tensao-127">127Vca</option>
+                            <option value="tensao-220">220Vca</option>
+                        </select>
+                    </div>
+                    <div class="tipo_estruta">
+                        <label for="inversor">Tipo de estrutura</label>
+                        <select name="estrutura" id="estrutura">
+                            <option disabled selected value="null">Selecione uma opção</option>
+                            <option value="sem-estrutra">SEM ESTRUTURA SOLAR</option>
+                            <option value="estutura-uma-placa">ESTRUTURA 1PLACA POSTE</option>
+                            <option value="estutura-duas-placa">ESTRUTURA 2PLACA POSTE</option>
+                        </select>
+                    </div>
+                    <div class="tensao_operacao_sistema">
+                        <label for="tensao">Tensão de operação do sistema</label>
+                        <select name="tensao" id="tensao">
+                            <option disabled selected value="null">Selecione uma opção</option>
+                            <option value="vca127">127 Vca</option>
+                            <option value="vdc24">24 Vdc</option>
+                            <option value="vdc48">48 Vdc</option>
+                            <option value="vca127">127 Vca</option>
+                            <option value="vca220">220 Vca</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bateria">
+                    <h2>Bateria</h2>
+                    <div class="modelo_bateria">
+                        <label for="modelo_bateria">Modelo da Bateria</label>
+                        <select name="modelo_bateria" id="modelo_bateria">
+                            <option disabled selected value="null">Selecione uma opção</option>
+                            <option value="bateria_moura">BATERIA SELADA SOLAR 12V 220AH MOURA</option>
+                            <option value="bateria_intelbras45">BATERIA ESTACIONARIA 12V 45AH INTELBRAS</option>
+                            <option value="bateria_intelbras60">BATERIA ESTACIONARIA 12V 60AH INTELBRAS</option>
+                            <option value="bateria_elo">BATERIA SOLAR 12-150AH ELO SOLAR</option>
+                            <option value="bateria_moura">BATERIA SELADA SOLAR 12V 220AH MOURA</option>
+                        </select>
+                    </div>
+                    <div class="porcentagem_bateria">
+                        <label for="porcentagem_bateria">Descarregar baterias até (%)</label>
+                        <select name="porcentagem_bateria" id="porcentagem_bateria">
+                            <option disabled selected value="null">Selecione uma opção</option>
+                            <option value="bat30">30%</option>
+                            <option value="bat40">40%</option>
+                            <option value="bat50">50%</option>
+                            <option value="bat60">60%</option>
+                            <option value="bat70">70%</option>
+                            <option value="bat80">80%</option>
+                        </select>
+                    </div>
+                    <div class="autonomia">
+                        <label for="bat-auto">Autonomia (Horas)</label>
+                        <input type="number" name="bat-auto" id="bat-auto">
+                    </div>
+                </div>
+                <div class="local">
+                    <h2>Local de Instalação</h2>
+                    <div class="regiao">
+                        <label for="regiao">Região</label>
+                        <select name="regiao" id="regiao" onchange="carregarEstados()">
+                            <option disabled selected value="null">Selecione uma opção</option>
+                            <option value="norte">Norte</option>
+                            <option value="nordeste">Nordeste</option>
+                            <option value="oeste">Centro-Oeste</option>
+                            <option value="sudeste">Sudeste</option>
+                            <option value="sul">Sul</option>
+                        </select>
+                    </div>
+                    <div class="estado">
+                        <label for="estado">Estados</label>
+                        <select name="estado" id="estado">
+                            <option disabled selected value="null">Selecione uma opção</option>
+                            <!-- Opções de estados serão carregadas dinamicamente aqui -->
+                        </select>
+                    </div>
+                    <button onclick="montagemSolar()" id="montagemSolar">Montagem</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
 
-.container-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 2em;
-}
-
-.container {
-    flex: -1;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    padding: 1em;
-    background-color: #fff;
-}
-
-.lista_equip {
-        padding: 1em;
-        border: 2px solid #333; /* Cor da borda da lista */
-        background-color: #f9f9f9; /* Cor de fundo da lista */
-        border-radius: 5px; /* Borda arredondada */
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
-        margin-top: 1em; /* Espaço entre a lista e o elemento anterior */
-}
-
-.lista_equip>p {
-
-    line-height: 30px;
-
-}
-
-.container2 {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 2em;
-    background-color: #fff;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-.inversor,
-.bateria,
-.local {
-    flex: 1;
-    background-color: #f9f9f9;
-    padding: 1em;
-    margin-right: 1em;
-    overflow-x: auto;
-}
-
-.container2 h2 {
-    color: #0D6EFD;
-}
-
-.resultado>label {
-    color: white
-}
-
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: #333;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 0.5em;
-    border-radius: 5px;
-    margin-bottom: 1em;
-    font-size: 16px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-}
-
-.resultado {
-    text-align: center;
-    margin-top: 1em;
-    font-size: 24px;
-    padding: 1em;
-    background-image: linear-gradient(135deg, #5F01DB, #0D6EFD);
-    color: white;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-}
-
-
-button {
-    margin-top: 1em;
-    padding: 1em;
-    width: 100%;
-    background-color: #0D6EFD;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #005ac8;
-}
-
-
-.inversor,
-.bateria,
-.local {
-    background-color: #f9f9f9;
-    padding: 1em;
-}
-
-select {
-    background-color: #f2f2f2;
-}
+</html>
