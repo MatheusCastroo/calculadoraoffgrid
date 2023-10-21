@@ -9,7 +9,7 @@ body {
     height: 100vh;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
-    background-color:#e5eaf1 ;
+    background-color: #e5eaf1;
 }
 
 header {
@@ -36,12 +36,17 @@ header {
 }
 
 .lista_equip {
-        padding: 1em;
-        border: 2px solid #333; /* Cor da borda da lista */
-        background-color: #f9f9f9; /* Cor de fundo da lista */
-        border-radius: 5px; /* Borda arredondada */
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
-        margin-top: 1em; /* Espaço entre a lista e o elemento anterior */
+    padding: 1em;
+    border: 2px solid #333;
+    /* Cor da borda da lista */
+    background-color: #f9f9f9;
+    /* Cor de fundo da lista */
+    border-radius: 5px;
+    /* Borda arredondada */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    margin-top: 1em;
+    /* Espaço entre a lista e o elemento anterior */
 }
 
 .lista_equip>p {
@@ -117,6 +122,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 15px;
 }
 
 button:hover {
