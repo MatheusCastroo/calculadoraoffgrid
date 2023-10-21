@@ -9,10 +9,11 @@ body {
     height: 100vh;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
+    background-color: #e5eaf1;
 }
 
 header {
-    background-image: linear-gradient(135deg, #5F01DB, #0075EB);
+    background-image: linear-gradient(135deg, #F1F1F1, #0D6EFD);
     color: white;
     text-align: center;
     padding: 1em;
@@ -20,12 +21,12 @@ header {
 
 .container-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 2em;
 }
 
 .container {
-    flex: 1;
+    flex: -1;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -34,27 +35,51 @@ header {
     background-color: #fff;
 }
 
+.lista_equip {
+    padding: 1em;
+    border: 2px solid #333;
+    /* Cor da borda da lista */
+    background-color: #f9f9f9;
+    /* Cor de fundo da lista */
+    border-radius: 5px;
+    /* Borda arredondada */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    margin-top: 1em;
+    /* Espaço entre a lista e o elemento anterior */
+}
+
+.lista_equip>p {
+
+    line-height: 30px;
+
+}
+
 .container2 {
     display: flex;
     justify-content: space-between;
     margin-left: 2em;
     background-color: #fff;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    width: 65%;
 }
 
 
-.inversor, .bateria, .local {
+.inversor,
+.bateria,
+.local {
     flex: 1;
     background-color: #f9f9f9;
     padding: 1em;
     margin-right: 1em;
+    overflow-x: auto;
 }
 
 .container2 h2 {
-    color: #0075EB;
+    color: #0D6EFD;
 }
 
-.resultado > label {
+.resultado>label {
     color: white
 }
 
@@ -66,7 +91,8 @@ label {
     color: #333;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: 0.5em;
     border-radius: 5px;
@@ -80,7 +106,7 @@ input, select {
     margin-top: 1em;
     font-size: 24px;
     padding: 1em;
-    background-image: linear-gradient(135deg, #5F01DB, #0075EB);
+    background-image: linear-gradient(135deg, #5F01DB, #0D6EFD);
     color: white;
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -91,11 +117,12 @@ button {
     margin-top: 1em;
     padding: 1em;
     width: 100%;
-    background-color: #0075EB;
+    background-color: #0D6EFD;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 15px;
 }
 
 button:hover {
@@ -103,7 +130,9 @@ button:hover {
 }
 
 
-.inversor, .bateria, .local {
+.inversor,
+.bateria,
+.local {
     background-color: #f9f9f9;
     padding: 1em;
 }
