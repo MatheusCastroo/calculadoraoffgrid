@@ -129,6 +129,11 @@ function montagemSolar() {
     let selectPlaca = document.getElementById('placa');
     let selectBateria = document.getElementById('modelo_bateria');
     let selectEstrutura = document.getElementById('estrutura');
+    let selectTensao127 = document.getElementById('tensao_127')
+    let selectTensao220 = document.getElementById('tensao_220')
+    let selectTensao_Bat12 = document.getElementById('tensao_bateria_12')
+    let selectTensao_Bat24 = document.getElementById('tensao_bateria_24')
+    let selectTensao_Bat48 = document.getElementById('tensao_bateria_48')
     let res = document.getElementById('res'); // Obtenha o elemento onde você deseja exibir o resultado
 
     // Obtenha o texto das opções selecionadas
@@ -138,4 +143,6 @@ function montagemSolar() {
 
     // Exiba o texto das opções em um elemento
     alert("Placa:" + placa + "\nBateria: " + modeloBateria + "\nEstrutura: " + estrutura);
+
+    
 }
