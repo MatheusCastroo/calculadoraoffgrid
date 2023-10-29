@@ -125,24 +125,39 @@ document.getElementById('regiao').addEventListener('change', carregarEstados);
 carregarEstados();
 
 function montagemSolar() {
-
     let selectPlaca = document.getElementById('placa');
     let selectBateria = document.getElementById('modelo_bateria');
     let selectEstrutura = document.getElementById('estrutura');
-    let selectTensao127 = document.getElementById('tensao_127')
-    let selectTensao220 = document.getElementById('tensao_220')
-    let selectTensao_Bat12 = document.getElementById('tensao_bateria_12')
-    let selectTensao_Bat24 = document.getElementById('tensao_bateria_24')
-    let selectTensao_Bat48 = document.getElementById('tensao_bateria_48')
-    let res = document.getElementById('res'); // Obtenha o elemento onde você deseja exibir o resultado
+    let selectTensao127 = document.getElementById('tensao_127').value;
+    let selectTensao220 = document.getElementById('tensao_220').value;
+    let selectTensao_Bat12 = document.getElementById('tensao_bateria_12').value;
+    let selectTensao_Bat24 = document.getElementById('tensao_bateria_24').value;
+    let selectTensao_Bat48 = document.getElementById('tensao_bateria_48').value;
 
-    // Obtenha o texto das opções selecionadas
+    // Exiba o texto das opções selecionadas
     let placa = selectPlaca.options[selectPlaca.selectedIndex].text;
     let modeloBateria = selectBateria.options[selectBateria.selectedIndex].text;
     let estrutura = selectEstrutura.options[selectEstrutura.selectedIndex].text;
 
-    // Exiba o texto das opções em um elemento
-    alert("Placa:" + placa + "\nBateria: " + modeloBateria + "\nEstrutura: " + estrutura);
+    alert("Placa: " + placa + "\nBateria: " + modeloBateria + "\nEstrutura: " + estrutura);
 
-    
+    if (selectTensao127 === 127 && selectTensao_Bat12 === 12) {
+        alert("INVERSOR SENOIDAL 350W 12V/110V IP 350-11 EPEVER");
+    } else if (selectTensao127 === 127 && selectTensao_Bat24 === 24) {
+        alert("INVERSOR DE TENSÃO SENOIDAL 750W ISV 751 INTELBRAS");
+    } else if (selectTensao127 === 127 && selectTensao_Bat48 === 48) {
+        alert("INVERSOR SENOIDAL 4000W 48V/110V IP400-41-PLUS(T) EPEVER");
+    } else {
+        alert("");
+    }
+
+    /*Como valdiar um select em um if*/
+    /*Adptar essa condição no código 
+     else if(tensãodeop == 220 && tensaobancodebateria == 24) {
+        console.log "Inversor senoidal 2000W 24v/220v ip2000-22-plus(t) epever"
+    }
+
+    else if(tensãodeop == 220 && tensaobancodebateria == 48) {
+        console.log "inversor denoidal 4000w 48v/220 ip4000-42-plus(t) epever"
+    } */
 }
