@@ -159,5 +159,5 @@ function montagemSolar() {
         inversor = "";
     }
     alert (inversor + "\nPlaca: " + placa + "\nBateria: " + bateria + "\nModelo de Bateria: " + modeloBateria + "\nEstrutura: " + estrutura); 
-
+/*Até o momento o controlador é validado através do potencia de equipamentos, tensão do banco de bateria e autonomia em horas*/ 
 }
