@@ -127,27 +127,25 @@ carregarEstados();
 function montagemSolar() {
     let selectPlaca = document.getElementById('placa');
     let selectBateria = document.getElementById('modelo_bateria');
+    let selectTensao = document.getElementById('tensao').value; // Obter o valor selecionado da tensão do inversor
+    let selectTensao_Bat = document.getElementById('tensao-bateria').value; // Obter o valor selecionado da tensão da bateria
     let selectEstrutura = document.getElementById('estrutura');
-    let selectTensao127 = document.getElementById('tensao_127').value;
-    let selectTensao220 = document.getElementById('tensao_220').value;
-    let selectTensao_Bat12 = document.getElementById('tensao_bateria_12').value;
-    let selectTensao_Bat24 = document.getElementById('tensao_bateria_24').value;
-    let selectTensao_Bat48 = document.getElementById('tensao_bateria_48').value;
 
-    // Exiba o texto das opções selecionadas
+    // Exibir o texto das opções selecionadas
     let placa = selectPlaca.options[selectPlaca.selectedIndex].text;
     let modeloBateria = selectBateria.options[selectBateria.selectedIndex].text;
     let estrutura = selectEstrutura.options[selectEstrutura.selectedIndex].text;
 
     alert("Placa: " + placa + "\nBateria: " + modeloBateria + "\nEstrutura: " + estrutura);
 
-    if (selectTensao127 === 127 && selectTensao_Bat12 === 12) {
+    if (selectTensao === "tensao_127" && selectTensao_Bat === "tensao_bateria_12") {
         alert("INVERSOR SENOIDAL 350W 12V/110V IP 350-11 EPEVER");
-    } else if (selectTensao127 === 127 && selectTensao_Bat24 === 24) {
+    }
+    /* else if (selectTensao127 === 127 && selectTensao_Bat24 === 24) {
         alert("INVERSOR DE TENSÃO SENOIDAL 750W ISV 751 INTELBRAS");
     } else if (selectTensao127 === 127 && selectTensao_Bat48 === 48) {
         alert("INVERSOR SENOIDAL 4000W 48V/110V IP400-41-PLUS(T) EPEVER");
-    } else {
+    } */else {
         alert("");
     }
 
