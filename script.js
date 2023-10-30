@@ -133,29 +133,31 @@ function montagemSolar() {
 
     // Exibir o texto das opções selecionadas
     let placa = selectPlaca.options[selectPlaca.selectedIndex].text;
+    let bateria = selectBateria.options[selectBateria.selectedIndex].text;
     let modeloBateria = selectBateria.options[selectBateria.selectedIndex].text;
     let estrutura = selectEstrutura.options[selectEstrutura.selectedIndex].text;
+    let inversor = "";
 
-    alert("Placa: " + placa + "\nBateria: " + modeloBateria + "\nEstrutura: " + estrutura);
+    
 
     if (selectTensao === "tensao_127" && selectTensao_Bat === "tensao_bateria_12") {
-        alert("INVERSOR SENOIDAL 350W 12V/110V IP 350-11 EPEVER");
+        inversor = "INVERSOR SENOIDAL 350W 12V/110V IP 350-11 EPEVER";
     }
-    /* else if (selectTensao127 === 127 && selectTensao_Bat24 === 24) {
-        alert("INVERSOR DE TENSÃO SENOIDAL 750W ISV 751 INTELBRAS");
-    } else if (selectTensao127 === 127 && selectTensao_Bat48 === 48) {
-        alert("INVERSOR SENOIDAL 4000W 48V/110V IP400-41-PLUS(T) EPEVER");
-    } */else {
-        alert("");
+    else if (selectTensao === "tensao_127" && selectTensao_Bat === "tensao_bateria_24") {
+        inversor = "INVERSOR DE TENSÃO SENOIDAL 750W ISV 751 INTELBRAS";
+    } else if (selectTensao === "tensao_127" && selectTensao_Bat === "tensao_bateria_48") {
+        inversor = "INVERSOR SENOIDAL 4000W 48V/110V IP400-41-PLUS(T) EPEVER";
     }
+    else if (selectTensao == "tensao_220" && selectTensao_Bat === "tensao_bateria_24") {
+        inversor = "INVERSOR SONOIDAL 2000W 24v/220v IP 2000-22-PLUS(T) EPEVER";
+    }
+    else if (selectTensao == "tensao_220" && selectTensao_Bat === "tensao_bateria_48") {
+        inversor = "INVERSOR DENOIDAL 4000W 48v/220 IP 4000-42-PLUS(T) EPEVER";
 
-    /*Como valdiar um select em um if*/
-    /*Adptar essa condição no código 
-     else if(tensãodeop == 220 && tensaobancodebateria == 24) {
-        console.log "Inversor senoidal 2000W 24v/220v ip2000-22-plus(t) epever"
     }
+    else {
+        inversor = "";
+    }
+    alert (inversor + "\nPlaca: " + placa + "\nBateria: " + bateria + "\nModelo de Bateria: " + modeloBateria + "\nEstrutura: " + estrutura); 
 
-    else if(tensãodeop == 220 && tensaobancodebateria == 48) {
-        console.log "inversor denoidal 4000w 48v/220 ip4000-42-plus(t) epever"
-    } */
 }
