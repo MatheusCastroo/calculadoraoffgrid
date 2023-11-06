@@ -159,5 +159,13 @@ function montagemSolar() {
         inversor = "";
     }
     alert (inversor + "\nPlaca: " + placa + "\nBateria: " + bateria + "\nModelo de Bateria: " + modeloBateria + "\nEstrutura: " + estrutura); 
-/*Até o momento o controlador é validado através do potencia de equipamentos, tensão do banco de bateria e autonomia em horas*/ 
+/*Até o momento o controlador é validado através do potencia de equipamentos, tensão do banco de bateria, descarregrar bateria e autonomia em horas*/ 
+/*if (potenciaW >= 2772 && tensaobat === 12 && autonomiaHora <= 1) {
+
+alert("CONTROLADOR DE CARGA EPEVER MPPT 30A")
+
+} 
+
+*/ 
+ /*Criar a lista da montagem de gerador, essa lista deve ficar abaixo de container 2.*/
 }
