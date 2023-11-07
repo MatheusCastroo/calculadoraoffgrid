@@ -63,6 +63,16 @@ header {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     width: 65%;
 }
+.montagemGerador {
+        border: 1px solid #00000021; /* Uma borda sólida preta de 1 pixel */
+        padding: 10px; /* Espaçamento interno para melhor visualização */  
+        display: none;
+
+}
+.montagemGerador li {
+    list-style-position: inside; /* Define os pontos dentro da borda da lista */
+    line-height: 25px;
+  }
 
 
 .inversor,

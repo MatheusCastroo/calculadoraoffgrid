@@ -138,34 +138,58 @@ function montagemSolar() {
     let estrutura = selectEstrutura.options[selectEstrutura.selectedIndex].text;
     let inversor = "";
 
-    
-
     if (selectTensao === "tensao_127" && selectTensao_Bat === "tensao_bateria_12") {
         inversor = "INVERSOR SENOIDAL 350W 12V/110V IP 350-11 EPEVER";
-    }
-    else if (selectTensao === "tensao_127" && selectTensao_Bat === "tensao_bateria_24") {
+    } else if (selectTensao === "tensao_127" && selectTensao_Bat === "tensao_bateria_24") {
         inversor = "INVERSOR DE TENSÃO SENOIDAL 750W ISV 751 INTELBRAS";
     } else if (selectTensao === "tensao_127" && selectTensao_Bat === "tensao_bateria_48") {
         inversor = "INVERSOR SENOIDAL 4000W 48V/110V IP400-41-PLUS(T) EPEVER";
-    }
-    else if (selectTensao == "tensao_220" && selectTensao_Bat === "tensao_bateria_24") {
+    } else if (selectTensao == "tensao_220" && selectTensao_Bat === "tensao_bateria_24") {
         inversor = "INVERSOR SONOIDAL 2000W 24v/220v IP 2000-22-PLUS(T) EPEVER";
-    }
-    else if (selectTensao == "tensao_220" && selectTensao_Bat === "tensao_bateria_48") {
+    } else if (selectTensao == "tensao_220" && selectTensao_Bat === "tensao_bateria_48") {
         inversor = "INVERSOR DENOIDAL 4000W 48v/220 IP 4000-42-PLUS(T) EPEVER";
-
-    }
-    else {
+    } else {
         inversor = "";
     }
-    alert (inversor + "\nPlaca: " + placa + "\nBateria: " + bateria + "\nModelo de Bateria: " + modeloBateria + "\nEstrutura: " + estrutura); 
-/*Até o momento o controlador é validado através do potencia de equipamentos, tensão do banco de bateria, descarregrar bateria e autonomia em horas*/ 
-/*if (potenciaW >= 2772 && tensaobat === 12 && autonomiaHora <= 1) {
 
-alert("CONTROLADOR DE CARGA EPEVER MPPT 30A")
+    // Crie uma lista para as informações
+    let listaMontagem = document.createElement('ul');
 
-} 
+    // Adicione a placa à lista
+    let liPlaca = document.createElement('li');
+    liPlaca.innerHTML = "<strong>Placa:</strong> " + placa;
+    listaMontagem.appendChild(liPlaca);
 
-*/ 
- /*Criar a lista da montagem de gerador, essa lista deve ficar abaixo de container 2.*/
+    // Adicione a bateria à lista
+    let liBateria = document.createElement('li');
+    liBateria.innerHTML = "<strong>Bateria:</strong> " + bateria;
+    listaMontagem.appendChild(liBateria);
+
+    // Adicione o modelo de bateria à lista
+    let liModeloBateria = document.createElement('li');
+    liModeloBateria.innerHTML = "<strong>Modelo de Bateria:</strong> " + modeloBateria;
+    listaMontagem.appendChild(liModeloBateria);
+
+    // Adicione a estrutura à lista
+    let liEstrutura = document.createElement('li');
+    liEstrutura.innerHTML = "<strong>Estrutura:</strong> " + estrutura;
+    listaMontagem.appendChild(liEstrutura);
+    
+    // Adicione o inversor à lista
+    let liInversor = document.createElement('li');
+    liInversor.innerHTML = "<strong>Inversor:</strong> " + inversor;
+    listaMontagem.appendChild(liInversor);
+
+    // Exiba a <div class="montagemGerador"> após clicar no botão "Montagem"
+    let divMontagemGerador = document.querySelector('.montagemGerador');
+    divMontagemGerador.style.display = 'block';
+
+    // Atualize o <h2> para "Lista do Gerador"
+    let h2MontagemGerador = document.querySelector('.montagemGerador h2');
+    h2MontagemGerador.textContent = 'Lista do Gerador';
+
+    // Limpe o conteúdo anterior da lista e adicione a nova lista
+    let listaAntiga = document.querySelector('.montagemGerador ul');
+    listaAntiga.innerHTML = '';
+    listaAntiga.appendChild(listaMontagem);
 }
